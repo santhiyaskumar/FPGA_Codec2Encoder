@@ -8,8 +8,8 @@ This thesis implements a Register Transfer Level (RTL) version of Codec2 on a Fi
 Learn more about Codec2 :
 http://www.rowetel.com/wordpress/?page_id=452
 
-To downlaod run FPGA_Codec2Encoder:
-Please refer https://github.com/santhiyaskumar/FPGA_Codec2Encoder/wiki/Codec2_Encoder_2400_Verilog
+To downlaod & run FPGA_Codec2Encoder:
+Please refer https://github.com/santhiyaskumar/FPGA_Codec2Encoder/wiki/FPGA_Codec2Encoder-Wiki
 
 Detailed implementation steps are discussed in the Thesis document.
 Link download the Master Thesis: 
