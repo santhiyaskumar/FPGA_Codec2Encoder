@@ -475,7 +475,7 @@ reg [9:0] i;
 //------------------------------------------------------------------
 //                 -- Module Instantiations --                  
 //------------------------------------------------------------------
-reg  [N-1:0] 		m1_in1, m1_in2, m2_in1, m2_in2;
+	  reg  [N-1:0] 		m1_in1, m1_in2;// m2_in1, m2_in2;
 wire [N-1:0] 		m1_out, m2_out;
 
 reg [9:0] addr_sw_fft_imag,addr_sw_fft_real,addr_sw_imag,addr_sw_real;
@@ -485,7 +485,7 @@ reg [N-1:0] write_sw_fft_imag,write_sw_fft_real,write_sw_imag,write_sw_real;
 wire [N-1:0] out_sw_imag,out_sw_real,out_sw_fft_imag,out_sw_fft_real;
 
 qmult			 	 #(Q,N) 			    qmult1	   (m1_in1,m1_in2,m1_out);
-qmult  				 #(Q,N) 			    qmult2	   (m2_in1,m2_in2,m2_out);
+//qmult  				 #(Q,N) 			    qmult2	   (m2_in1,m2_in2,m2_out);
 
 // ------------------------------- Speech samples -------------------------------------------------------------------//
 
@@ -504,9 +504,13 @@ wire   [N-1:0]		in_imag_data,in_real_data,fft_write_fft_real,fft_write_fft_imag;
 wire [9:0] fft_addr_in_imag,fft_addr_in_real,fft_addr_out_real,fft_addr_out_imag;
 wire donefft;
 
-dft fft_nlp_module (startfft,clk,rst,out_sw_imag,out_sw_real,
+fft_32_bits_aof fft_32_bits (startfft,clk,rst,out_sw_imag,out_sw_real,
 						fft_addr_in_imag,fft_addr_in_real,fft_addr_out_real,fft_addr_out_imag,
-						fft_write_fft_real,fft_write_fft_imag,donefft);
+						fft_write_fft_real,fft_write_fft_imag,
+						
+						donefft
+						
+						);
 
 
 // ------------------------------- NLP module -------------------------------------------------------------------//					
