@@ -368,11 +368,15 @@ RAM_out_fft_real_gmax_80    fft_out_real_gmax(addr_out_real_gmax,clk,write_fft_r
 														we_out_fftr_gmax,out_fft_real_gmax);
 
 
-fft_nlp_extended_bits fft_nlp_module (startfft,clk,rst,fft_in_imag_data,fft_in_real_data,
+/*fft_nlp_extended_bits fft_nlp_module (startfft,clk,rst,fft_in_imag_data,fft_in_real_data,
 					fft_addr_in_imag,fft_addr_in_real,fft_addr_out_real,fft_addr_out_imag,
 								fft_write_fft_real,fft_write_fft_imag,donefft,
 								check_sig
-								);
+				     );*/
+				     
+fft_80_bits_nlp fft_nlp_module (startfft,clk,rst,fft_in_imag_data,fft_in_real_data,
+					fft_addr_in_imag,fft_addr_in_real,fft_addr_out_real,fft_addr_out_imag,
+								fft_write_fft_real,fft_write_fft_imag,donefft);
 
 
 
